@@ -11,37 +11,33 @@ This README covers the installation and use of the lab-built software for the te
 
 ### **How do I get set up?** ###
 
-This software works on both linux and windows operating systems. The following instructions work for both operating systems, but differ slightly depending on whether you use `pip` or `conda`.
+This software works on both linux and windows operating systems. The following instructions work for both operating systems.
 
-
-#### ** `pip` setup instructions: ** ####
 1. Make a new directory and clone the repository there
-2. Open a terminal and `cd` to the directory that you just created
-3. Make a virtual environment called "_mag" by running `virtualenv -p /usr/bin/python3.8 _mag` in the terminal
-4. Activate the virtual environment by running `source _mag/bin/activate` in the terminal
-5. Install the required dependencies by running `pip install -r requirements.txt` in the terminal
-6. Run `pip list` and verify that the packages and versions match those listed in `requirements.txt`
+2. Make a virtual environment with `python 3.8` in this directory and install the required dependencies by running `pip install -r requirements.txt` in the terminal
+3. Run `pip list` and verify that the packages and versions match those listed in `requirements.txt`
 
+### **Never done this kind of thing before?** ###
 
-#### ** `conda` setup instructions: ** ####
-1. Make a new directory and clone the repository there
-2. Open a terminal and `cd` to the directory that you just created
-3. Make a virtual environment called "_mag" by running `conda create --name _mag python==3.8` in the terminal
-4. Activate the virtual environment by running `conda activate _mag` in the terminal
-5. Install the required dependencies by running `conda install --file requirements.txt` in the terminal
-6. Run `conda list` and verify that the packages and versions match those listed in `requirements.txt`
+There are many package and environment managers for Python and beyond. If you have no preference, `conda` is a good place to start.
 
+1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+2. Make a new directory and clone the repository there
+3. Open an Anaconda Prompt and `cd` to the directory that you just created
+4. Make a virtual environment with the appropriate dependencies by running `conda env create -f environment.yml`
+5. Activate the virtual environment by running `conda activate .venv-magnetometer` in the Anaconda Prompt
+6. Run `conda list` and verify that the packages and versions match those listed in requirements.txt
 
 ### **How do I use it?** ###
 
 #### ** Start the GUI: ** ####
 1. Plug the teensy-based magnetometer into one of the USB ports on your machine. After a few seconds the OLED display on the device will light up.
-2. Ensure your virtual environment is active (see step 4 in either the `pip` or `conda` instructions)
-3. Run `python magnetometer.py` in the terminal. The GUI will open and display the field recordings in real-time.
+2. Ensure your virtual environment is active
+3. Run `python magnetometer.py` in the terminal/Anaconda Prompt. The GUI will open and display the field recordings in real-time.
 
 
 #### ** Recording Data: ** ####
-1. Enter the desired file name into the filename text box. Note that the string '.csv' will be automatically appended to whatever you enter, so there is no need to add it.
+1. Enter the desired file name into the filename text box. Note that the string '.csv' will be automatically appended to whatever you enter, so don't add it.
 2. When ready to record, press "Start Recording"
 3. When ready to stop recording, press "Stop Recording". A .csv file with your specified name will be written in the working directory.
 

@@ -45,10 +45,11 @@ There are many package and environment managers for Python and beyond. If you ha
 #### ** Changing Axis Limits: ** ####
 Sometimes it can be useful to change the axis limits to get a better look at the field in real time. To do this, enter the desired axis limits (ensure that lower limit < upper limit) into the text boxes and press the corresponding button. 
 
+
 #### ** When Finished ** ####
-1. Press "ctrl + c" in the GUI window. On windows this will close the GUI and kill the prcess in the terminal.
-2. If the process is still running in the terminal (i.e. the GUI window is open but not updating), run "ctrl + c" in the terminal. You may have to do this up to three times.
-3. If the process is still running, close the terminal. `Tcl` is slow to update in `tkinter` GUI's, so sometimes this happens. Work on a fix to this is ongoing.
+Important! You must press the "Close Window" button in the GUI window to close and end the program.
+
+This is because `Tcl` is slow to update in `tkinter` GUI's. If you neglected to use the "Close Window" button, the program may still be running in the terminal. Run "ctrl + c" as many times as it takes to kill the program. On WSL this may not even be enough and you may need to kill the terminal.
 
 
 ### **Who do I talk to if I have issues?** ###

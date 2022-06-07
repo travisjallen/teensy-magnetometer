@@ -25,7 +25,7 @@ There are many package and environment managers for Python and beyond. If you ha
 2. Make a new directory and clone the repository there
 3. Open an Anaconda Prompt and `cd` to the directory that you just created
 4. Make a virtual environment with the appropriate dependencies by running `conda env create -f environment.yml`
-5. Activate the virtual environment by running `conda activate .venv-magnetometer` in the Anaconda Prompt
+5. Activate the virtual environment by running `conda activate .venv-magnetometer`
 6. Run `conda list` and verify that the packages and versions match those listed in requirements.txt
 
 ### **How do I use it?** ###

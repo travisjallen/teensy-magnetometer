@@ -122,8 +122,8 @@ def comcheck(baudRate):
             com = f"{base_str}{port}"
             print(f"Teensy is at {com}")
             return com
-        else:
-            raise Exception("\n\n\nTeensy not found! Make sure it is plugged in and the OLED is on...\n")
+    
+    raise Exception("\n\n\nTeensy not found! Make sure it is plugged in and the OLED is on...\n")
 
     
 

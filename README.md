@@ -11,11 +11,12 @@ This README covers the installation and use of the lab-built software for the te
 
 ### **How do I get set up?** ###
 
-This software works on both linux and windows operating systems. The following instructions work for both operating systems.
+This software works on both linux and windows operating systems, but one extra step is required to get setup on a linux machine. This is detailed in the following instructions:
 
 1. Make a new directory and clone the repository there
-2. Make a virtual environment with `python 3.8` in this directory and install the required dependencies by running `pip install -r requirements.txt` in the terminal
-3. Run `pip list` and verify that the packages and versions match those listed in `requirements.txt`
+2. **If using linux** `cd` to the directory in which the repository is located. Run `./install_teensy_udev_rule.sh`. This requires root privileges. 
+3. Make a virtual environment with `python 3.8` in this directory and install the required dependencies by running `pip install -r requirements.txt` in the terminal
+4. Run `pip list` and verify that the packages and versions match those listed in `requirements.txt`
 
 ### **Never done this kind of thing before?** ###
 

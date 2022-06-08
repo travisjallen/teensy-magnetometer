@@ -11,10 +11,10 @@ This README covers the installation and use of the lab-built software for the te
 
 ### **How do I get set up?** ###
 
-This software works on both linux and windows operating systems, but one extra step is required to get setup on a linux machine. This is detailed in the following instructions:
+This software works on linux, windows, and windows subsystem for linux (WSL) operating systems. The setup procedures are similar, but one extra step is required to get setup on a linux machine. This step is **not** required for WSL. Here's how to get started:
 
 1. Make a new directory and clone the repository there
-2. **If using linux** `cd` to the directory in which the repository is located. Run `./install_teensy_udev_rule.sh`. This requires root privileges. This step allows serial commuincation between your compter and the teensy.
+2. **If using linux (not WSL)** `cd` to the directory in which the repository is located and run `./install_teensy_udev_rule.sh`. This requires root privileges. This step allows serial commuincation between your compter and the teensy.
 3. Make a virtual environment with `python 3.8` in this directory and install the required dependencies by running `pip install -r requirements.txt` in the terminal
 4. Run `pip list` and verify that the packages and versions match those listed in `requirements.txt`
 

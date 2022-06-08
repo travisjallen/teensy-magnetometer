@@ -38,12 +38,14 @@ There are many package and environment managers for Python and beyond. If you ha
 ### **How do I use it?** ###
 
 **Start the GUI:**
+
 1. Plug the teensy-based magnetometer into one of the USB ports on your machine. After a few seconds the OLED display on the device will light up.
 2. Ensure your virtual environment is active
 3. Run `python magnetometer.py` in the terminal/Anaconda Prompt. The GUI will open and display the field recordings in real-time.
 
 
 **Recording Data:**
+
 1. Enter the desired file name into the filename text box. Note that the string '.csv' will be automatically appended to whatever you enter, so don't add it.
 2. When ready to record, press "Start Recording"
 3. When ready to stop recording, press "Stop Recording". A .csv file with your specified name will be written in the working directory.

@@ -14,7 +14,7 @@ This README covers the installation and use of the lab-built software for the te
 This software works on both linux and windows operating systems, but one extra step is required to get setup on a linux machine. This is detailed in the following instructions:
 
 1. Make a new directory and clone the repository there
-2. **If using linux** `cd` to the directory in which the repository is located. Run `./install_teensy_udev_rule.sh`. This requires root privileges. 
+2. **If using linux** `cd` to the directory in which the repository is located. Run `./install_teensy_udev_rule.sh`. This requires root privileges. This step allows serial commuincation between your compter and the teensy.
 3. Make a virtual environment with `python 3.8` in this directory and install the required dependencies by running `pip install -r requirements.txt` in the terminal
 4. Run `pip list` and verify that the packages and versions match those listed in `requirements.txt`
 
@@ -50,8 +50,18 @@ Sometimes it can be useful to change the axis limits to get a better look at the
 #### ** When Finished ** ####
 Important! You must press the "Close Window" button in the GUI window to close and end the program.
 
-This is because `Tcl` is slow to update in `tkinter` GUI's. If you neglected to use the "Close Window" button, the program may still be running in the terminal. Run "ctrl + c" as many times as it takes to kill the program. On WSL this may not even be enough and you may need to kill the terminal.
+This is because `Tcl` is slow to update in `tkinter` GUI's. If you neglected to use the "Close Window" button, the program may still be running in the terminal. Run "ctrl + c" as many times as it takes to kill the program. On WSL this may not even be enough and you may need to kill the terminal. A fix to this issue is being investigated. 
 
+### **What's in this repository?**
+- `magnetometer.py` is the main script. This is the only thing you will run when you use the sensor. 
+- `teensyserial.py` is a module which establishes and supports serial communication with the teensy. It is called by `magnetometer.py`.
+- `teensytk.py` is a module which establishes and supports the GUI. It is called by `magnetometer.py`.
+- `environment.yml` is a YAML file which allows for a user to easily set up a `conda` environment with the necessary dependencies.
+- `requirements.txt` is a list of dependencies that are required for this program to run.
+- `00-teensy.rules` are the udev rules which are required to enable serial communication between linux machines and the teensy.
+- `install_teensy_udev_rule.sh` is a bash script that installs the udev rules which are required to enable serial communication between linux machines and the teensy.
+- `extras` is a folder which contains ancillary and legacy code and documentation. You will not need anything in this folder unless you seek to fundamentally alter the way this device operates. The code that is on the teensy can be found here. The original creator of this device set it up such that it could be used with ROS. Some documentation and code regarding use with ROS can be found here. The sensor on the magnetometer is an Infineon TLV493D, and its documentation can be found here. To reiterate: you probably don't need anything in here.
+- `README.md` is this file.
 
 ### **Who do I talk to if I have issues?** ###
 

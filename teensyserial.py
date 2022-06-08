@@ -13,11 +13,12 @@ import serial
 import sys
 import numpy as np
 import time
+import platform 
 
 ##-----------End Imports-----------
 
 ## version number
-version_no = 1.0
+version_no = 1.1
 
 class SerialPort:
     def __init__(self,port,baud_rate):
@@ -73,6 +74,14 @@ class SerialPort:
         return len(data)
 
 
+def in_wsl() -> bool:
+    """
+    checks if a user is using WSL. this changes the base string from
+    "/dev/ttyACM" to "/dev/tty/S"
+    """
+    return 'Microsoft' in platform.uname().release
+
+
 def comcheck(baudRate):
     """
     checks user's OS and finds the com or dev/tty that the teensy is on
@@ -80,11 +89,15 @@ def comcheck(baudRate):
     ## notify the user
     print("Searching for operating system...")
     p = sys.platform
-
+    
     ## decide if windows or linux
     if p == 'linux':
-        print("Linux operating system detected")
-        base_str = '/dev/ttyS'
+        if in_wsl():
+            print("WSL detected")
+            base_str = '/dev/ttyS'
+        else:
+            print("Linux operating system detected")
+            base_str = '/dev/ttyACM'
         
     elif p == 'win32':
         print("Windows operating system detected")

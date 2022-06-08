@@ -29,7 +29,7 @@ import teensyserial
 
 def main():
     ## set a baud rate
-    baudRate = 9600
+    baudRate = 115200
 
     ## Initialize the teensy
     teensy = teensyserial.open(baudRate)
